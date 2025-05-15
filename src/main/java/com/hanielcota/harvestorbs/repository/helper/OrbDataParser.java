@@ -10,9 +10,21 @@ import org.bukkit.World;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.util.UUID;
+
+/**
+ * Utilitário para conversão (parser) entre {@link OrbData} e YamlConfiguration.
+ * Facilita leitura e escrita segura de dados de Orb em arquivos de configuração YAML.
+ */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class OrbDataParser {
 
+    /**
+     * Lê uma entrada do YamlConfiguration e converte para {@link OrbData}.
+     *
+     * @param config YamlConfiguration a ser lida
+     * @param key    Chave do registro
+     * @return OrbData convertida ou null se inválido
+     */
     public static OrbData fromYaml(YamlConfiguration config, String key) {
         UUID id = parseUUID(key);
         if (id == null) return null;
@@ -30,6 +42,12 @@ public class OrbDataParser {
         return new OrbData(id, type, location);
     }
 
+    /**
+     * Salva um {@link OrbData} no YamlConfiguration.
+     *
+     * @param config YamlConfiguration para escrita
+     * @param data   OrbData a ser persistida
+     */
     public static void toYaml(YamlConfiguration config, OrbData data) {
         config.set(data.getId() + ".type", data.getType().name());
         Location loc = data.getLocation();
@@ -42,6 +60,12 @@ public class OrbDataParser {
         }
     }
 
+    /**
+     * Tenta converter uma String em UUID.
+     *
+     * @param key String potencialmente um UUID
+     * @return UUID ou null se inválido
+     */
     private static UUID parseUUID(String key) {
         try {
             return UUID.fromString(key);
@@ -50,6 +74,12 @@ public class OrbDataParser {
         }
     }
 
+    /**
+     * Tenta converter uma String em {@link OrbType}.
+     *
+     * @param typeName Nome do tipo
+     * @return OrbType correspondente ou null se inválido
+     */
     private static OrbType parseOrbType(String typeName) {
         try {
             return OrbType.valueOf(typeName);
@@ -58,16 +88,19 @@ public class OrbDataParser {
         }
     }
 
+    /**
+     * Monta uma {@link Location} a partir dos parâmetros lidos do YAML.
+     *
+     * @param worldName Nome do mundo
+     * @param x         Coordenada X
+     * @param y         Coordenada Y
+     * @param z         Coordenada Z
+     * @return Location ou null se não encontrado
+     */
     private static Location parseLocation(String worldName, double x, double y, double z) {
-        if (worldName == null) {
-            return null;
-        }
-
+        if (worldName == null) return null;
         World world = Bukkit.getWorld(worldName);
-        if (world == null) {
-            return null;
-        }
-
+        if (world == null) return null;
         return new Location(world, x, y, z);
     }
 }

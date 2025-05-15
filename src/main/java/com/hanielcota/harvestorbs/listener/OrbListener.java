@@ -28,7 +28,7 @@ public class OrbListener implements Listener {
         if (!isReplantableCrop(type)) return;
 
         Location location = block.getLocation();
-        Optional<Orb> orbOpt = orbManager.getOrbsNear(location, 10).stream().findFirst();
+        Optional<Orb> orbOpt = orbManager.getOrbsNear(location, 30).stream().findFirst();
         if (orbOpt.isEmpty()) return;
 
         Orb orb = orbOpt.get();
