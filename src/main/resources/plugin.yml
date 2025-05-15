@@ -1,0 +1,4 @@
+name: HarvestOrbs
+version: '1.0-SNAPSHOT'
+main: com.hanielcota.harvestorbs.HarvestOrbsPlugin
+api-version: '1.21'
