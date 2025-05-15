@@ -1,6 +1,6 @@
 # HarvestOrbs
 
-> Um plugin moderno de orbs flutuantes para PaperMC, que replanta automaticamente plantações quebradas e traz vida ao seu servidor!
+> Um plugin moderno de orbs flutuantes para PaperSpigot, que replanta automaticamente plantações quebradas e traz vida ao seu servidor!
 
 ---
 
@@ -8,7 +8,7 @@
 
 O **HarvestOrbs** permite que você adicione "Orbs" mágicas flutuantes ao mundo. Quando uma plantação próxima é quebrada, a orb dispara partículas e a planta é replantada automaticamente no estágio máximo de crescimento.
 
-O projeto é escrito em Java, com arquitetura limpa, princípios SOLID, tarefas otimizadas e integração total com o ecossistema PaperMC.
+O projeto é escrito em Java, com arquitetura limpa, princípios SOLID, tarefas otimizadas e integração total com o ecossistema PaperSpigot.
 
 ---
 
@@ -74,4 +74,5 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 ## 📷 Imagens
 
-![Orb flutuante com partícula](docs/orb-demo.gif)
+![image](https://github.com/user-attachments/assets/c74d2480-4c9c-46fe-b0c2-22823ea826aa)
+
