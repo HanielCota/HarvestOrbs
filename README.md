@@ -66,11 +66,19 @@ Pull requests são **muito bem-vindos**! Sinta-se à vontade para abrir issues o
 
 ---
 
+📝 TODO
+
+Tornar as orbs configuráveis
+
+---
+
 ## 📄 Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ---
+
+
 
 ## 📷 Imagens
 
